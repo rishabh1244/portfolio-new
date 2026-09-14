@@ -53,7 +53,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.bottom}>
-        <span>Built with a lot of prompt's and patience </span>
+        <span>Built with prompt's and patience </span>
         <span>© 2026 Rizzabh</span>
       </div>
     </footer>
