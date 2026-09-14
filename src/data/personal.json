@@ -1,0 +1,17 @@
+{
+  "name": "Rishabh Kumar",
+  "role": "FullStack Developer",
+  "location": "India",
+  "email": "1244rishabh@gmail.com",
+  "about": [
+    "Hi! I'm Rishabh, a FullStack Developer passionate about building things at the intersection of systems, design and ideas.",
+    "I love working on web apps, low level stuff, simulations and anything that lets me learn something new."
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/" },
+    { "label": "Twitter", "url": "https://x.com/" },
+    { "label": "Mail", "url": "mailto:1244rishabh@gmail.com" },
+    { "label": "Resume", "url": "#" }
+  ]
+}
