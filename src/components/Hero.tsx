@@ -1,23 +1,25 @@
+import { useState, useEffect } from 'react'
 import styles from './Hero.module.css'
 import Img from './Img'
 
-const Hero = () => (
-  
- 
-      <section className={styles.hero}>
-   
-    <Img alt="Scenic pixel-art banner" src="/banner.png" />
-  </section>
+const Hero = () => {
+  const [dark, setDark] = useState(false)
 
-      /*
-    <div className={styles.heroOverlay}>
-      <span>Better</span>
-      <span>Systems</span>
-      <span>Brighter</span>
-      <span>Days_</span>
-    </div>
- */
-)
+  useEffect(() => {
+    const check = () => {
+      setDark(document.documentElement.getAttribute('data-theme') === 'dark')
+    }
+    check()
+    const observer = new MutationObserver(check)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
+    return () => observer.disconnect()
+  }, [])
 
+  return (
+    <section className={styles.hero}>
+      <Img alt="Scenic pixel-art banner" src={dark ? '/banner2.gif' : '/banner.gif'} />
+    </section>
+  )
+}
 
 export default Hero
