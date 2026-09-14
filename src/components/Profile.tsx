@@ -14,6 +14,7 @@ const Profile = () => (
         </a>
       </div>
       <p className={styles.role}>{personal.role}</p>
+      <p className={styles.subtitle}>Cracked Autistic Delusional Retard</p>
       <div className={styles.info}>
         <span className={styles.location}>⌖ {personal.location}</span>
         <span className={styles.email}>✉ {personal.email}</span>
