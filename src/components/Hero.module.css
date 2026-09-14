@@ -14,6 +14,14 @@
   background: linear-gradient(180deg, #6b8eae 0%, #547795 45%, #243b3e 100%);
 }
 
+[data-theme="dark"] .hero img {
+  filter: brightness(0.72) saturate(0.85);
+}
+
+[data-theme="dark"] .hero {
+  border-bottom-color: var(--border);
+}
+
 .heroOverlay {
   position: absolute;
   top: 25px;

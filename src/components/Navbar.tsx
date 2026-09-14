@@ -2,32 +2,30 @@ import { useState, useEffect } from 'react'
 import styles from './Navbar.module.css'
 
 const Navbar = () => {
-  const [active, setActive] = useState('#top')
+  const [dark, setDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('theme')
+      if (saved) return saved === 'dark'
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+    return false
+  })
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]')
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive('#' + entry.target.id)
-          }
-        })
-      },
-      { rootMargin: '-50% 0px -50% 0px' }
-    )
-
-    sections.forEach((section) => observer.observe(section))
-    return () => observer.disconnect()
-  }, [])
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
+    localStorage.setItem('theme', dark ? 'dark' : 'light')
+  }, [dark])
 
   return (
     <header className={styles.navbar}>
       <nav className={styles.nav} aria-label="Primary">
-        <a href="#top" className={active === '#top' ? styles.active : ''}>Home</a>
-        <a href="#projects" className={active === '#projects' ? styles.active : ''}>Projects</a>
-        <a href="#experience" className={active === '#experience' ? styles.active : ''}>Experience</a>
+        <a href="#top" className={styles.active}>Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
       </nav>
+      <button className={styles.themeBtn} type="button" onClick={() => setDark(v => !v)} aria-label="Toggle theme">
+        {dark ? '☼' : '☾'}
+      </button>
     </header>
   )
 }

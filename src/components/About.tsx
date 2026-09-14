@@ -1,11 +1,13 @@
 import styles from './About.module.css'
+import personal from '../data/personal.json'
 
 const About = () => (
   <section className="content-section section-border" id="about">
     <div className="sectionHeading"><h2>About</h2></div>
     <div className={styles.aboutCopy}>
-      <p>Hi! I'm Rishabh, a FullStack Developer passionate about building things at the intersection of systems, design and ideas.</p>
-      <p>I love working on web apps, low level stuff, simulations and anything that lets me learn something new.</p>
+      {personal.about.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))}
     </div>
   </section>
 )

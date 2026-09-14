@@ -7,6 +7,7 @@ import Profile from './components/Profile'
 import About from './components/About'
 import Contact from './components/Contact'
 import Projects from './components/Projects'
+import TechStack from './components/TechStack'
 import Experience from './components/Experience'
 import Footer from './components/Footer'
 
@@ -19,6 +20,7 @@ function App() {
         <Profile />
         <About />
         <Contact />
+        <TechStack />
         <Projects />
         <Experience />
       </main>

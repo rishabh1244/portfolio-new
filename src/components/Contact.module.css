@@ -1,21 +1,29 @@
 .contactGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
   padding: 9px 24px 18px;
 }
 
 .contactChip {
-  min-height: 40px;
   border: 1px solid #8f9087;
   border-radius: 8px;
-  display: grid;
-  grid-template-columns: 25px 1fr 16px;
+  display: flex;
   align-items: center;
-  padding: 0 10px;
-  font-size: 12px;
+  justify-content: center;
+  padding: 8px;
   background: rgba(255, 255, 255, 0.08);
   transition: 0.15s ease;
+  width: fit-content;
+}
+
+[data-theme="dark"] .contactChip {
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .contactChip:hover {
+  background: var(--ink);
+  color: var(--panel);
 }
 
 .contactChip:hover {
@@ -23,12 +31,21 @@
   border-color: var(--ink);
 }
 
+.resume {
+  margin-left: auto;
+}
+
 .contactIcon {
-  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  width: 20px;
+  height: 20px;
+}
+
+.contactIcon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .iconLinkedin {

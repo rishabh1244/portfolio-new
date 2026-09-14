@@ -12,6 +12,15 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
+[data-theme="dark"] .projectCard {
+  background: #151719;
+  border-color: #555850;
+}
+
+[data-theme="dark"] .projectCard img {
+  border-bottom-color: #555850;
+}
+
 .projectCard img {
   width: 100%;
   height: 200px;

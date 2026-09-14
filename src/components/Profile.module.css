@@ -28,8 +28,51 @@
 .profileCopy h1 {
   font-size: 30px;
   line-height: 1;
-  margin-bottom: 7px;
   letter-spacing: -1.4px;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.resume {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #8f9087;
+  border-radius: 6px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: 0.15s ease;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .resume {
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .resume:hover {
+  background: var(--ink);
+  color: var(--panel);
+}
+
+.resume:hover {
+  transform: translateY(-1px);
+  border-color: var(--ink);
+}
+
+.resume span:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.resume span:first-child svg {
+  width: 16px;
+  height: 16px;
 }
 
 .role {

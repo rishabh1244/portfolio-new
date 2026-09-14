@@ -6,6 +6,7 @@
   height: 64px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 28px;
   background: var(--panel);
   border-bottom: 1px solid var(--ink);
@@ -18,10 +19,10 @@
 }
 
 .nav {
-  margin-left: auto;
   display: flex;
   gap: 28px;
   font-size: 13px;
+  align-items: center;
 }
 
 .nav a,
@@ -54,8 +55,16 @@
 }
 
 .themeBtn {
-  font-size: 20px;
-  width: 22px;
+  font-size: 26px;
+  color: var(--ink);
+  border: none;
+  padding: 0;
+  line-height: 1;
+  margin-left: auto;
+}
+
+[data-theme="dark"] .themeBtn:hover {
+  opacity: 0.7;
 }
 
 @media (max-width: 720px) {
