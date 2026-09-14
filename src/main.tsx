@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './globals.css'
 import Navbar from './components/Navbar'
@@ -11,22 +11,18 @@ import Experience from './components/Experience'
 import Footer from './components/Footer'
 
 function App() {
-  const [dark, setDark] = useState(false)
-
   return (
-    <div className={dark ? 'site dark' : 'site'}>
-      <div className="shell">
-        <Navbar dark={dark} onToggleTheme={() => setDark(v => !v)} />
-        <main id="top">
-          <Hero />
-          <Profile />
-          <About />
-          <Contact />
-          <Projects />
-          <Experience />
-        </main>
-        <Footer />
-      </div>
+    <div className="site">
+      <Navbar />
+      <main id="top">
+        <Hero />
+        <Profile />
+        <About />
+        <Contact />
+        <Projects />
+        <Experience />
+      </main>
+      <Footer />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: 260px;
+  height: 320px;
   overflow: hidden;
   border-bottom: 1px solid var(--ink);
   background: #486e8d;
@@ -26,7 +26,7 @@
 
 @media (max-width: 720px) {
   .hero {
-    height: 220px;
+    height: 300px;
   }
 }
 

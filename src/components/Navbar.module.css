@@ -1,17 +1,14 @@
 .navbar {
-  height: 66px;
-  border-bottom: 1px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 64px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 22px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(100%, 720px);
+  padding: 0 28px;
   background: var(--panel);
-  z-index: 100;
+  border-bottom: 1px solid var(--ink);
 }
 
 .brand {
@@ -21,8 +18,9 @@
 }
 
 .nav {
+  margin-left: auto;
   display: flex;
-  gap: 24px;
+  gap: 28px;
   font-size: 13px;
 }
 
