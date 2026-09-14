@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from './Footer.module.css'
-import quote from '../data/quote.json'
+import quotes from '../data/quote.json'
 
 const getOrdinal = (n: number) => {
   const s = ['th', 'st', 'nd', 'rd']
@@ -12,6 +12,7 @@ const formatNumber = (n: number) => n.toLocaleString()
 
 const Footer = () => {
   const [count, setCount] = useState<number | null>(null)
+  const [randomQuote] = useState(() => quotes[Math.floor(Math.random() * quotes.length)])
 
   useEffect(() => {
     const key = 'visitor_count'
@@ -28,8 +29,8 @@ const Footer = () => {
           <div className={styles.quoteRow}>
             <span className={styles.quoteIcon} aria-hidden="true">"</span>
             <div className={styles.quoteBody}>
-              <p className={styles.quoteText}>{quote.quote}</p>
-              <footer className={styles.quoteAuthor}>— {quote.author}</footer>
+              <p className={styles.quoteText}>{randomQuote.quote}</p>
+              <footer className={styles.quoteAuthor}>— {randomQuote.author}</footer>
             </div>
           </div>
         </div>

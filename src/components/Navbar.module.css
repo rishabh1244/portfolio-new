@@ -39,6 +39,7 @@
   bottom: -11px;
   height: 2px;
   background: var(--ink);
+  transition: width 150ms ease, transform 150ms ease;
 }
 
 .more,
