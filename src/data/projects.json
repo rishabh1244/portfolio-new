@@ -1,0 +1,45 @@
+[
+
+  
+  {
+    "name": "trading-system",
+    "description": "A production-inspired centralized cryptocurrency exchange built in Rust to study low-latency backend systems, order matching algorithms, concurrency, and scalable service architecture. The project prioritizes correctness, performance, and systems design over CRUD functionality.",
+    "image": "projects/trading.png",
+    "github": "https://github.com/rishabh1244/trading-system"
+  },
+ 
+
+  
+  {
+    "name": "Minecraft",
+    "description": "Developed a Minecraft-inspired game engine from scratch using C and OpenGL, focusing on low-level graphics programming and real-time rendering. The project includes voxel-based world representation.",
+    "image": "projects/minecraft.png",
+    "github": "https://github.com/rishabh1244/Minecraft"
+  },
+  
+  {
+    "name": "Sketch-AI",
+    "description": "A visual learning tool that combines Excalidraw with large language models to generate dynamic diagrams, flowcharts, and animations for complex topics in physics, mathematics, and engineering.",
+    "image": "projects/sketch.png",
+    "github": "https://github.com/rishabh1244/Sketch-AI"
+  },
+  {
+    "name": "sorting-algo-visualiser",
+    "description": "Implemented a real-time sorting algorithm visualization engine in C using Raylib, and algorithmic clarity. The system visually represents sorting processes step-by-step, providing intuitive insight into algorithmic behavior.",
+    "image": "projects/sorting.png",
+    "github": "https://github.com/rishabh1244/sorting-algo-visualiser"
+  },
+  {
+    "name": "raycasting-js",
+    "description": "A from-scratch implementation of a 2D raycasting engine in JavaScript, inspired by early 3D games like Wolfenstein 3D.",
+    "image": "projects/raycaster.png",
+    "github": "https://github.com/rishabh1244/raycasting-js"
+  },
+
+  {
+    "name": "Break-The-Code",
+    "description": "Break-The-Code is an interactive problem-solving platform where developers intentionally break code while an LLM attempts to debug and fix it. Built using Docker and Next.js.",
+    "image": "projects/breakthecode.png",
+    "github": "https://github.com/rishabh1244/Break-The-Code"
+  }
+]

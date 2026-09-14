@@ -1,6 +1,7 @@
 import styles from './Projects.module.css'
 import Img from './Img'
 import Arrow from './Arrow'
+import projects from '../data/projects.json'
 
 const Projects = () => (
   <section className="content-section section-border" id="projects">
@@ -8,20 +9,20 @@ const Projects = () => (
       <h2>Projects</h2>
     </div>
     <div className={styles.projectGrid}>
-      <article className={styles.projectCard}>
-        <Img alt="DevJournal screenshot" />
-        <div className={styles.projectCopy}>
-          <div className={styles.projectTitleRow}><h3>DevJournal</h3><Arrow /></div>
-          <p>A minimal journaling app for developers.</p>
-        </div>
-      </article>
-      <article className={styles.projectCard}>
-        <Img alt="MetroSim screenshot" />
-        <div className={styles.projectCopy}>
-          <div className={styles.projectTitleRow}><h3>MetroSim</h3><Arrow /></div>
-          <p>A city transit simulation game built in C++.</p>
-        </div>
-      </article>
+      {projects.map((project) => (
+        <article className={styles.projectCard} key={project.name}>
+          <a href={project.github} target="_blank" rel="noreferrer">
+            <Img alt={`${project.name} screenshot`} src={project.image} />
+          </a>
+          <div className={styles.projectCopy}>
+            <div className={styles.projectTitleRow}>
+              <h3>{project.name}</h3>
+              <a href={project.github} target="_blank" rel="noreferrer"><Arrow /></a>
+            </div>
+            <p>{project.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 )

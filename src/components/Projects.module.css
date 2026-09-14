@@ -12,17 +12,13 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
-.projectCard > img {
+.projectCard img {
   width: 100%;
-  height: 132px;
+  height: 200px;
   object-fit: cover;
   display: block;
   background: linear-gradient(135deg, #2f3131, #dad5c4);
   border-bottom: 1px solid #8f9087;
-}
-
-.projectCard:nth-child(2) > img {
-  background: linear-gradient(180deg, #8b5a8a, #271d2e);
 }
 
 .projectCopy {
