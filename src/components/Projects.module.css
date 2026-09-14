@@ -55,7 +55,25 @@
 @media (max-width: 720px) {
   .projectGrid {
     grid-template-columns: 1fr;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 14px 16px 16px;
+  }
+  .projectCard img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 430px) {
+  .projectGrid {
+    gap: 10px;
+    padding: 12px 12px 14px;
+  }
+  .projectCard img {
+    height: 160px;
+  }
+  .projectTitleRow h3 {
+    font-size: 14px;
+  }
+  .projectCopy p {
+    font-size: 11px;
   }
 }

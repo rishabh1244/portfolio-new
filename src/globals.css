@@ -83,5 +83,23 @@ h1,h2,h3 { font-family: 'VT323', monospace; font-size: 1.15em; letter-spacing: 0
 .arrow { font-size: 19px; line-height: 1; }
 
 @media (max-width: 720px) {
-  .site { width: 100%; border-left: 0; border-right: 0; }
+  .site {
+    width: 100%;
+    border-left: 0;
+    border-right: 0;
+    zoom: 1.2;
+  }
+  .sectionHeading {
+    padding: 0 16px;
+    min-height: 40px;
+  }
+  .sectionHeading h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .site {
+    zoom: 1.1;
+  }
 }
