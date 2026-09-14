@@ -4,9 +4,8 @@ import Arrow from './Arrow'
 
 const Projects = () => (
   <section className="content-section section-border" id="projects">
-    <div className={`${styles.sectionHeading} ${styles.withLink}`}>
+    <div className="sectionHeading">
       <h2>Projects</h2>
-      <a href="#projects">View all <Arrow /></a>
     </div>
     <div className={styles.projectGrid}>
       <article className={styles.projectCard}>

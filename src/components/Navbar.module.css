@@ -5,6 +5,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 22px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 720px);
+  background: var(--panel);
+  z-index: 100;
 }
 
 .brand {

@@ -11,7 +11,7 @@ const links = [
 
 const Contact = () => (
   <section className="content-section section-border" id="contact">
-    <div className={styles.sectionHeading}><h2>Contact</h2></div>
+    <div className="sectionHeading"><h2>Contact</h2></div>
     <div className={styles.contactGrid}>
       {links.map(([label, href]) => (
         <a key={label} className={styles.contactChip} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>

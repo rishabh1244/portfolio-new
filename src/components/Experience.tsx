@@ -9,9 +9,8 @@ const experiences = [
 
 const Experience = () => (
   <section className="content-section section-border" id="experience">
-    <div className={`${styles.sectionHeading} ${styles.withLink}`}>
+    <div className="sectionHeading">
       <h2>Experience</h2>
-      <a href="#experience">View all <Arrow /></a>
     </div>
     <div className={styles.timeline}>
       {experiences.map(([date, title, detail]) => (
