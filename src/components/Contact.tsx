@@ -1,6 +1,8 @@
 import styles from './Contact.module.css'
 import personal from '../data/personal.json'
 
+const resumeLink = personal.links.find(l => l.label === 'Resume')
+
 const Contact = () => (
   <section className="content-section section-border" id="contact">
     <div className={styles.contactGrid}>
@@ -12,6 +14,15 @@ const Contact = () => (
           />
         </a>
       ))}
+      {resumeLink && (
+        <a className={styles.contactChip} href={resumeLink.url} target="_blank" rel="noreferrer">
+          <span
+            className={styles.contactIcon}
+            dangerouslySetInnerHTML={{ __html: resumeLink.icon }}
+          />
+          <span>Resume</span>
+        </a>
+      )}
     </div>
   </section>
 )

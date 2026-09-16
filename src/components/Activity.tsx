@@ -58,6 +58,33 @@ const DiscordIcon = () => (
   </svg>
 )
 
+function MarqueeText({ text, className }: { text: string; className?: string }) {
+  const innerRef = useRef<HTMLSpanElement>(null)
+  const [overflow, setOverflow] = useState(0)
+
+  useEffect(() => {
+    const el = innerRef.current
+    if (!el) return
+    const diff = el.scrollWidth - el.clientWidth
+    setOverflow(diff > 0 ? diff : 0)
+  }, [text])
+
+  return (
+    <span className={`${styles.marqueeViewport} ${className ?? ''}`}>
+      <span
+        ref={innerRef}
+        className={styles.marqueeInner}
+        style={overflow > 0 ? {
+          animation: `marquee ${Math.max(6, overflow / 18)}s ease-in-out infinite`,
+          '--marquee-dist': `-${overflow}px`,
+        } as React.CSSProperties : undefined}
+      >
+        {text}
+      </span>
+    </span>
+  )
+}
+
 const Activity = () => {
   const [data, setData] = useState<LanyardData | null>(null)
   const [now, setNow] = useState(Date.now())
@@ -106,11 +133,9 @@ const Activity = () => {
           <SpotifyIcon />
           <span className={styles.statusLabel}>Spotify</span>
           {isPlaying ? (
-            <span className={styles.statusText}>
-              {spotify!.song} — {spotify!.artist}
-            </span>
+            <MarqueeText text={`${spotify!.song} — ${spotify!.artist}`} />
           ) : (
-            <span className={styles.statusText}>{spotify!.song}</span>
+            <MarqueeText text={spotify!.song!} />
           )}
         </div>
       )}
@@ -119,12 +144,13 @@ const Activity = () => {
         <div className={styles.statusItem}>
           <DiscordIcon />
           <span className={styles.statusLabel}>Discord</span>
-          <span className={styles.statusText}>
-            {discordAct.name}
-            {discordAct.timestamps?.start && (
-              <> · {formatTime(now - discordAct.timestamps.start)}</>
-            )}
-          </span>
+          <MarqueeText
+            text={
+              discordAct.timestamps?.start
+                ? `${discordAct.name} · ${formatTime(now - discordAct.timestamps.start)}`
+                : discordAct.name
+            }
+          />
         </div>
       )}
     </div>
