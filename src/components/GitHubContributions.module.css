@@ -27,6 +27,7 @@
   flex-direction: column;
   gap: 4px;
   min-width: min-content;
+  margin-left: -15px;
 }
 
 .months {
