@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Projects from './components/Projects'
 import TechStack from './components/TechStack'
 import Experience from './components/Experience'
+import GitHubContributions from './components/GitHubContributions'
 import Footer from './components/Footer'
 
 function App() {
@@ -25,9 +26,11 @@ function App() {
 
         <TechStack />
 
+        <GitHubContributions />
         <Projects />
 
         <Experience />
+
 
       </main>
       <Footer />
