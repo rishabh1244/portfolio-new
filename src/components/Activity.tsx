@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react'
 import styles from './Activity.module.css'
 
 const LANYARD_URL = 'https://api.lanyard.rest/v1/users/740083324332146790'
@@ -58,25 +58,45 @@ const DiscordIcon = () => (
   </svg>
 )
 
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
+
 function MarqueeText({ text, className }: { text: string; className?: string }) {
+  const viewportRef = useRef<HTMLSpanElement>(null)
   const innerRef = useRef<HTMLSpanElement>(null)
-  const [overflow, setOverflow] = useState(0)
+  const [dist, setDist] = useState(0)
+
+  const measure = useCallback(() => {
+    const viewport = viewportRef.current
+    const inner = innerRef.current
+    if (!viewport || !inner) return
+    const overflow = inner.scrollWidth - viewport.clientWidth
+    setDist(overflow > 0 ? overflow + 10 : 0)
+  }, [])
+
+  useIsomorphicLayoutEffect(() => {
+    measure()
+  }, [text, measure])
 
   useEffect(() => {
-    const el = innerRef.current
-    if (!el) return
-    const diff = el.scrollWidth - el.clientWidth
-    setOverflow(diff > 0 ? diff : 0)
-  }, [text])
+    const viewport = viewportRef.current
+    if (!viewport) return
+    const ro = new ResizeObserver(measure)
+    ro.observe(viewport)
+    return () => ro.disconnect()
+  }, [measure])
+
+  const animate = dist > 0
+  const duration = Math.max(6, dist / 18)
 
   return (
-    <span className={`${styles.marqueeViewport} ${className ?? ''}`}>
+    <span ref={viewportRef} className={`${styles.marqueeViewport} ${className ?? ''}`}>
       <span
         ref={innerRef}
-        className={styles.marqueeInner}
-        style={overflow > 0 ? {
-          animation: `marquee ${Math.max(6, overflow / 18)}s ease-in-out infinite`,
-          '--marquee-dist': `-${overflow}px`,
+        className={`${styles.marqueeInner} ${animate ? styles.isMarquee : ''}`}
+        style={animate ? {
+          '--marquee-dist': `-${dist}px`,
+          '--marquee-duration': `${duration}s`,
         } as React.CSSProperties : undefined}
       >
         {text}
