@@ -22,6 +22,7 @@ function App() {
 
         <About />
         <Contact />
+        <Activity />
 
 
         <TechStack />
@@ -29,9 +30,8 @@ function App() {
         <Projects />
 
         <Experience />
-            <Activity />
 
-        </main>
+      </main>
       <Footer />
     </div>
   )

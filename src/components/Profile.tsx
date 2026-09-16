@@ -1,7 +1,6 @@
 import styles from './Profile.module.css'
 import Img from './Img'
 import personal from '../data/personal.json'
-
 const Profile = () => (
   <section className={styles.profile}>
     <Img className={styles.avatar} alt="Ri profile" src="/pfp.jpg" />

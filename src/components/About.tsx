@@ -8,6 +8,8 @@ const About = () => (
       {personal.about.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
+
+
     </div>
   </section>
 )
