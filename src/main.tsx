@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Projects from './components/Projects'
 import TechStack from './components/TechStack'
 import Experience from './components/Experience'
+import Activity from './components/Activity'
 import Footer from './components/Footer'
 
 function App() {
@@ -18,12 +19,19 @@ function App() {
       <main id="top">
         <Hero />
         <Profile />
+
         <About />
         <Contact />
+
+
         <TechStack />
+
         <Projects />
+
         <Experience />
-      </main>
+            <Activity />
+
+        </main>
       <Footer />
     </div>
   )

@@ -1,0 +1,91 @@
+.activityBody {
+  padding: 18px 24px;
+}
+
+.divider {
+  border-top: 1px dashed var(--line);
+  margin: 0 24px;
+}
+
+.activitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.activityItem {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.activityIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--ink);
+  margin-top: 2px;
+}
+
+.activityContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.activityLabel {
+  font-family: 'VT323', monospace;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+.activityRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.activityName {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.activitySub {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.activityElapsed {
+  font-size: 12px;
+  color: var(--soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .activitiesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .activityBody {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  .activityBody {
+    padding: 12px;
+  }
+  .activityName {
+    font-size: 13px;
+  }
+  .activitySub {
+    font-size: 12px;
+  }
+}
