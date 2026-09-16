@@ -89,7 +89,6 @@ const GitHubContributions = () => {
           </div>
         )}
 
-        {error && <div className={styles.error}>GitHub activity unavailable.</div>}
 
         {data && (
           <>
