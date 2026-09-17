@@ -57,8 +57,6 @@ async function fetchContributions() {
 
   const json = await res.json()
 
-  console.log('GitHub status:', res.status)
-  console.log('GitHub response:', JSON.stringify(json, null, 2))
 
   if (!res.ok) {
     throw new Error(
